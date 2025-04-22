@@ -6,8 +6,15 @@ st.header("Data Scientist Enthusiast")
 
 import base64
 
+import os
+import base64
+
 def set_bg_from_local(image_file):
-    with open(image_file, "rb") as file:
+    # Get the full path to the image relative to this script
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    image_path = os.path.join(current_dir, image_file)
+
+    with open(image_path, "rb") as file:
         encoded = base64.b64encode(file.read()).decode()
 
     st.markdown(
@@ -41,7 +48,7 @@ with tabs[0]:
 
 with tabs[1]:
     st.subheader("📊 Data Analytics Projects")
-    st.markdown(" About Me")
+    st.markdown("This section showcases a collection of data analytics projects that highlight my skills in data wrangling, visualization, and statistical analysis. The projects demonstrates practical insights derived from real-world datasets using tools like Python, Pandas, as well as Visualization tools such as PowerBI.")
     import project_a
     import project_b
 
@@ -53,7 +60,7 @@ with tabs[1]:
 
 with tabs[2]:
     st.subheader("🤖 Machine Learning Projects")
-    st.markdown(" About Me")
+    st.markdown("This section features machine learning projects focused on predictive modeling, classification, and clustering. These projects illustrate my ability to build, evaluate, and deploy ML models using frameworks like scikit-learn to Predict Housing Prices or Churning Customers")
 
     import ml_project_a
     import ml_project_b
