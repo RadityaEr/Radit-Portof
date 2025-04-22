@@ -29,7 +29,7 @@ def set_bg_from_local(image_file):
     )
 
 # Call it at the top of your app
-set_bg_from_local(r"E:\Coding\4 - Portofolio Posting\Starry Night.jpg")
+set_bg_from_local("Starry Night.jpg")
 
 
 # Create horizontal tabs
